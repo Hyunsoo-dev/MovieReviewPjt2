@@ -47,7 +47,7 @@
             </div>
           </form>
       
-      
+      	
       <a class="btn btn-primary" href="#">Sign In</a>
     </div>
   </nav>
