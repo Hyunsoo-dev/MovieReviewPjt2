@@ -23,7 +23,7 @@
   <!-- Custom styles for this template -->
   <link href="css/landing-page.min.css" rel="stylesheet">
 		
-	<title>전시포유</title>
+	<title>watcha</title>
 	
 </head>
 
@@ -55,7 +55,7 @@
   <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
       <a class="navbar-brand" href="main.jsp">WATCHA</a>
-      <a class="btn btn-primary" href="join.jsp">회원관리</a>
+    <a class="btn btn-primary" href="logoutAction.jsp">로그아웃</a>
     </div>
   </nav>
   	<%
@@ -65,7 +65,7 @@
 		<nav class="navbar navbar-light bg-light static-top">
     <div class="container">
       <a class="navbar-brand" href="main.jsp">WATCHA</a>
-      <a class="btn btn-primary" href="join.jsp">로그아웃</a>
+      <a class="btn btn-primary" href="logoutAction.jsp">로그아웃</a>
     </div>
   </nav>
   
@@ -74,6 +74,9 @@
 		}
   %>
 		
+  
+  
+  
   
   
   <!-- Masthead -->
@@ -85,11 +88,11 @@
           <h1 class="mb-5">WATCHA</h1>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <form action="#" role="search" method="post">
+          <form action="MovieList.jsp" role="search" method="post">
             <div class="form-row">
               <div class="col-12 col-md-9 mb-2 mb-md-0">
-                <input type="email" name="movieName"class="form-control form-control-lg" placeholder="작품 제목, 배우, 감독을 검색해 보세요.">
-              </div>
+                 <input type="text" name="movieName" class="form-control form-control-lg" placeholder="작품 제목, 배우, 감독을 검색해 보세요." >
+            </div>
               <div class="col-12 col-md-3">
                 <button type="submit" class="btn btn-block btn-lg btn-primary">검색</button>
               </div>
@@ -143,10 +146,10 @@
           <h2 class="mb-4">고민 접어두고 우리랑 영화 즐겨요!</h2>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <form  action="join" role="search" method="post">
+          <form  action="join.jsp"  method="post">
             <div class="form-row">
               <div class="col-12 col-md-9 mb-2 mb-md-0">
-                <input type="email" name="userEmail"class="form-control form-control-lg" placeholder="이메일을 입력하세요.">
+                <input type="email" name="userEmail" id="userEmail" class="form-control form-control-lg" placeholder="이메일을 입력하세요.">
               </div>
               <div class="col-12 col-md-3">
                 <button type="submit" class="btn btn-block btn-lg btn-primary">회원 가입!</button>
@@ -157,6 +160,8 @@
       </div>
     </div>
   </section>
+
+
 
   <!-- Footer -->
   <footer class="footer bg-light">
