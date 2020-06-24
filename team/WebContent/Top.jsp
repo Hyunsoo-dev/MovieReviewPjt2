@@ -1,3 +1,5 @@
+
+
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -10,7 +12,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Landing Page - Start Bootstrap Theme</title>
+  <title>watcha</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -23,34 +25,96 @@
   <!-- Custom styles for this template -->
   <link href="css/landing-page.min.css" rel="stylesheet">
 		
-	<title>전시포유</title>
+	<title>watcha</title>
 	
 
 
 </head>
 <body>
- 
+ <script>
+function press(f){
+	if(f.keyCode ==13){
+		search.submit();
+	}
+} 
+</script>
+ <%
+	String userID = null;
+	if(session.getAttribute("userID")!=null){
+		userID = (String)session.getAttribute("userID");
+	}
+	
+%>
+
+  <%
+		if(userID == null){
+		
+		
+		%>
   <!-- Navigation -->
   <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
-      <a class="navbar-brand" href="form.jsp">WATCHA</a>
+      <a class="navbar-brand" href="main.jsp">WATCHA</a>
       
-      	
-    	 <form action = "MovieList.jsp" method ="post">
-            <div class="form-row">
-              <div class="col-12 col-md-8">
-                <input type="text" name="movieName" class="form-control">
-              </div>
-              <div class="col-12 col-md-4">
-                <button type="submit" class="btn btn-primary">검색</button>
-              </div>
+      
+   <form  action="MovieList.jsp" role="search" method="post" name="search" >
+        <div class="form-row">
+         <input type="text" class="form-control form-control-lg" placeholder="작품 제목, 배우, 감독을 검색해 보세요." name="movieName" onkeypress="JavaScript:press(this.form)">
             </div>
-          </form>
+      </form>
       
-      	
-      <a class="btn btn-primary" href="#">Sign In</a>
+      
+      <a class="btn btn-primary" href="login.jsp">접속하기</a>
     </div>
   </nav>
+<%
+		}else if(userID.equals("admin")) {
+		%>	
+
+  <nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+      <a class="navbar-brand" href="main.jsp">WATCHA</a>
+      
+           
+   <form  action="MovieList.jsp" role="search" method="post" name="search" >
+        <div class="form-row">
+          <input type="text" class="form-control form-control-lg" placeholder="작품 제목, 배우, 감독을 검색해 보세요." name="movieName" onkeypress="JavaScript:press(this.form)">
+        
+         
+            </div>
+      </form>
+      
+    <a class="btn btn-primary" href="logoutAction.jsp">로그아웃</a>
+    </div>
+  </nav>
+  	<%
+		}else{
+		%>
+		
+		<nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+      <a class="navbar-brand" href="main.jsp">WATCHA</a>
+          
+   <form  action="MovieList.jsp" role="search" method="post" name="search" >
+        <div class="form-row">
+       <input type="text" class="form-control form-control-lg" placeholder="작품 제목, 배우, 감독을 검색해 보세요." name="movieName" onkeypress="JavaScript:press(this.form)">
+        
+         
+            </div>
+      </form>
+      <a class="btn btn-primary" href="logoutAction.jsp">로그아웃</a>
+    </div>
+  </nav>
+  
+  <%
+  
+		}
+  %>
+		
+  
+ <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
