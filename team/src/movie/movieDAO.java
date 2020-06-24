@@ -18,8 +18,8 @@ public class movieDAO {
 	try {
 	
 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
-		String id = "system";
-		String pw = "1234";
+		 String id = "system";
+	      String pw = "oracle";
 		String driver = "oracle.jdbc.driver.OracleDriver";
 	
 		Class.forName(driver);
@@ -31,7 +31,7 @@ public class movieDAO {
 		
 	}
 	
-	//¿µÈ­ ¸®½ºÆ® ÀÔ·ÂÇÏ±â
+	//ï¿½ï¿½È­ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Ô·ï¿½ï¿½Ï±ï¿½
 	public void setMovie(movieBean ebean){
 		
 		getCon();
@@ -51,7 +51,7 @@ public class movieDAO {
 			e.printStackTrace();
 		}	
 	}
-	//¿µÈ­ ¸®½ºÆ® °¡Á®¿À±â 
+	//ï¿½ï¿½È­ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 	
 	public Vector<movieBean> getMovieList(String movieName){
 		
