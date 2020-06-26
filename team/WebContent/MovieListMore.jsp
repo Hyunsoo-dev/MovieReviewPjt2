@@ -11,7 +11,8 @@
 <jsp:include page="Top.jsp" />
 </head>
 <body>
-<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+
+	<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
 		<ul class="navbar-nav">
 		    <li class="nav-item active">
 		      <a class="nav-link" href="#">영화</a>
@@ -19,7 +20,8 @@
 		</ul>
 			
 	</nav>
-
+	<br>
+	<section class="movieListMore">
 	<%		
 			//리스트 페이지에서 더보기 버튼 클릭 시 검색값을 같이 넘겨줌.
 			request.setCharacterEncoding("euc-kr");
@@ -37,25 +39,34 @@
 			<tr height = "20">
 				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				<td>
-					<img src = "img/<%= ebean.getImg()%>" height ="100" width = "100">
+					<div class="movieListMore__list-img">
+						<a href ="bbs.jsp?movieName=<%=movieName%>">
+							<img src = "img/<%= ebean.getImg()%>" height ="100" width = "100">
+						</a>
+					</div>	
 				</td>
 				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				<td>	
-					<div><%= ebean.getName1()%></div><br>
-					<div><%= ebean.getMakingYear() %></div>
+				
+					<div class="movieListMore__list-content">
+						<a href ="bbs.jsp?movieName=<%=movieName%>">
+							<%= ebean.getName1()%><br>
+							<%= ebean.getMakingYear() %>
+						</a>
+					</div>
 				</td>
 			</tr>
-			<tr>
-			
-					<hr size="1px" color="white">
+			<tr>	
+				<hr class="hr" size="1px" color="white">
 				
 			</tr>	
 	</table>
 	
 	<%
-			}
+		}
 	%>
 		<hr size="1px" color="gray">
+	</section>
 <jsp:include page="Bottom.jsp" />
 </body>
 </html>

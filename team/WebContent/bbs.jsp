@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-     <%@ page import ="bbs.MoviebbsDTO" %>
-	<%@ page import ="bbs.MoviebbsDAO" %>
+     <%@ page import ="movie.MoviebbsDTO" %>
+	<%@ page import ="movie.MoviebbsDAO" %>
 <!DOCTYPE html>
 <html>
 <head>

@@ -19,7 +19,7 @@ public class movieDAO {
 	
 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
 		 String id = "system";
-	      String pw = "oracle";
+	      String pw = "1234";
 		String driver = "oracle.jdbc.driver.OracleDriver";
 	
 		Class.forName(driver);

@@ -1,4 +1,4 @@
-package bbs;
+package movie;
 
 import java.sql.*;
 
@@ -8,7 +8,7 @@ public class MoviebbsDAO {
 	
 	String url = "jdbc:oracle:thin:@localhost:1521:xe"; //localhost대신 ip주소가 들어갈수도
     String id = "system";
-    String pw = "oracle";
+    String pw = "1234";
 
 	Connection con = null;
 	PreparedStatement pstm =null;
@@ -105,13 +105,13 @@ public class MoviebbsDAO {
 				dto.setMovie_year(rs.getString(6));
 				dto.setMovie_time(rs.getString(7));
 				dto.setMovie_contents(rs.getString(8));
-				return dto;
+				
 			}
 			con.close();
 		}catch(Exception e) {
 			e.printStackTrace();			
 		}
-		return null;
+		return dto;
 		//객체를 한사람의 정보가 저장되는 객체반납
 		
 	}

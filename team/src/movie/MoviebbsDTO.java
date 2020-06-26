@@ -1,4 +1,4 @@
-package bbs;
+package movie;
 
 public class MoviebbsDTO {
 	private int     movie_no;
