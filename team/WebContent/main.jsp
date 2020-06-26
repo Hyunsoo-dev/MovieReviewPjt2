@@ -29,6 +29,7 @@
 
 <body>
 <%
+	request.setCharacterEncoding("euc-kr");
 	String userID = null;
 	if(session.getAttribute("userID")!=null){
 		userID = (String)session.getAttribute("userID");

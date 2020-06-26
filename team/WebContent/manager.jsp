@@ -12,10 +12,11 @@
 	
 		
 	}
+	
+
 </style>
 <meta charset="EUC-KR">
 <title>manager page</title>
-<jsp:include page="Top.jsp" />
 
 </head>
 <body>
@@ -23,7 +24,7 @@
 		<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
 			<ul class="navbar-nav">
 			    <li class="nav-item active">
-			      <a class="nav-link" href="manager.jsp">영화 리스트</a>
+			      <a class="nav-link" href="index.jsp?center=manager.jsp">영화 리스트</a>
 			    </li>
 			    <li class="nav-item">
 			      <a class="nav-link" href="InsertMovie.jsp">영화 정보 입력</a>
@@ -33,6 +34,7 @@
 	</header>
 	<section class="movieListMore">
 	<%
+		request.setCharacterEncoding("euc-kr");
 		ManagerDAO rdao = new ManagerDAO();
 		Vector<ManagerBean> v = rdao.getAllList(); 
 
@@ -46,7 +48,7 @@
 				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				<td>
 					<div class="movieListMore__list-img">
-						<a href ="#">
+						<a href ="index.jsp?center=movieInfo.jsp?no=<%=rbean.getMovie_no() %>">
 							<img src = "img/<%= rbean.getMovie_foster() %>" height ="100" width = "100">
 						</a>
 					</div>	
@@ -71,7 +73,11 @@
 		}
 	%>	
 	</table>
-	
 	</section>
+	
+	
+	
+
+	
 </body>
 </html>
