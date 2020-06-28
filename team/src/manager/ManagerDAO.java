@@ -130,4 +130,29 @@ public void managerUpdate(ManagerBean rbean){
 	
 	
 	}
+
+//관리자가 영화 정보를 삭제하는 메소드
+public void managerDelete(int Movie_no){
+	
+	getCon();
+	
+	
+	try {
+		
+		String sql = "delete from moviebbs where movie_no=?";
+		pstmt = con.prepareStatement(sql);
+		pstmt.setInt(1, Movie_no);
+		
+		pstmt.executeUpdate();
+		
+		
+			
+		con.close();
+		
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+		
+	
+	}	
 }

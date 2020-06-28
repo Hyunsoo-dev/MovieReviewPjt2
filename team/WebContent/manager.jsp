@@ -19,6 +19,8 @@
 <title>manager page</title>
 
 </head>
+
+<!-- 영화 검색 후 결과 출력 페이지 (관리자용) -->
 <body>
 	<header>
 		<nav class="navbar navbar-expand-sm bg-primary navbar-dark">

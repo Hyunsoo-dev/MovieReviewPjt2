@@ -106,7 +106,7 @@
      <div class="movieInfo__btn">
 	<button class="btn btn-primary btn-sm" onclick="location.href='index.jsp?center=manager.jsp'">전체 리스트 보기</button>
 	<button class="btn btn-primary btn-sm" onclick="location.href='index.jsp?center=managerUpdate.jsp?no=<%=rbean.getMovie_no()%>'">수정</button>
-	<button class="btn btn-primary btn-sm" onclick="location.href='index.jsp?center=managerDelete.jsp'">삭제</button>
+	<button class="btn btn-primary btn-sm" onclick="location.href='index.jsp?center=managerDelete.jsp?no=<%=rbean.getMovie_no()%>'">삭제</button>
 </div>
 
 </main>	
