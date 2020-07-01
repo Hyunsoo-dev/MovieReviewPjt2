@@ -126,6 +126,7 @@
 			<tr height="20"></tr>
 			
 		<%		
+			
 			}
 			
 			movieBean ebean = v.get(i);
@@ -149,11 +150,11 @@
 					</div>	
 					</td>
 				</div>
-				
-						
-				+
-			
-		<%
+
+
+
+
+        <%
 			}
 		%>
 		
