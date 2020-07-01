@@ -134,10 +134,53 @@ public class UserDAO {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1,  ulist);
 			return pstmt.executeUpdate();
+			
 		} catch(Exception e) {
 			e.printStackTrace();
+			
 		}
 		return -1; 
+	}
+	
+	public int userupdate(String userName, String userEmail,String userPassword, String userID) {//20200626
+		String SQL = "UPDATE muser SET userName = ? ,userEmail=?,userPassword=? where userID=?";
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			
+			pstmt.setString(1, userName);
+			pstmt.setString(2,  userEmail);
+			pstmt.setString(3,  userPassword);
+			pstmt.setString(4,  userID);
+		
+			return pstmt.executeUpdate();
+			
+		} catch(Exception e) {
+		
+			e.printStackTrace();
+		}
+		return -1; // �����ͺ��̽� ����
+	}
+	public User mypage(String userID) {//20200626
+		User us = new User();	
+		String SQL ="select userName, userEmail,userPassword from muser where userID=?";
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, userID);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {					
+				us.setUserName(rs.getString(1));
+				us.setUserEmail(rs.getString(2));
+				us.setUserPassword(rs.getString(3));
+				
+			}
+						
+		} catch(Exception e) {
+			System.out.println("1");
+			e.printStackTrace();
+		
+		}
+		return us;
 	}
 
 	public User getuser() {
