@@ -5,6 +5,14 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
+<style>
+	body{
+	
+		postion : static;
+		bottom : 0px;
+		width : 100%;
+	}
+</style>
 </head>
 <body>
 	<!-- Footer -->
