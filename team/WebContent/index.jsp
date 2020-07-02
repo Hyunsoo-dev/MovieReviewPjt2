@@ -26,7 +26,7 @@
 	request.setCharacterEncoding("euc-kr");
 	String center = request.getParameter("center");
 	if(center == null){
-		center = "manager.jsp";
+		center = "main.jsp";
 	}
 %>
 <table>

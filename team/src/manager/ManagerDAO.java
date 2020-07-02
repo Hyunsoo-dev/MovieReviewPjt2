@@ -120,7 +120,7 @@ public void managerUpdate(ManagerBean rbean){
 		pstmt.setInt(6, rbean.getMovie_no());
 		pstmt.executeUpdate();
 		
-		
+		  
 			
 		con.close();
 		
@@ -155,4 +155,37 @@ public void managerDelete(int Movie_no){
 		
 	
 	}	
+
+//관리자가 영화 정보를 등록하는 메소드
+public void fileUpload(String movie_name1, String movie_name2, String fileName,
+					   String fileRealName, String movie_year, String movie_time, String movie_content){
+	
+	getCon();
+	
+	
+	try {
+		
+		String sql = "insert into moviebbs values (moviebbs_seq, ?,?,?,?,?,?,?)";
+		pstmt = con.prepareStatement(sql);
+		pstmt.setString(1, movie_name1);
+		pstmt.setString(2, movie_name2);
+		pstmt.setString(3, fileName);
+		pstmt.setString(4, fileRealName);
+		pstmt.setString(5, movie_year);
+		pstmt.setString(6, movie_time);
+		pstmt.setString(7, movie_content);
+		pstmt.executeUpdate();
+		
+		
+			
+		con.close();
+		
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+		
+	
+	}	
+
+
 }
