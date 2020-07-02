@@ -29,7 +29,6 @@
 
 <body>
 <%
-	request.setCharacterEncoding("euc-kr");
 	String userID = null;
 	if(session.getAttribute("userID")!=null){
 		userID = (String)session.getAttribute("userID");
@@ -46,7 +45,17 @@
   <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
       <a class="navbar-brand" href="main.jsp">WATCHA</a>
-      <a class="btn btn-primary" href="login.jsp">접속하기</a>
+ <ul class = "nav navbar-nav navbar-right">
+			<li class="dropdown">
+				<a href="#" class ="dropdown-toggle"<%--여기서 #은 없음을 의미  --%>
+					data-toggle="dropdown" role="button" aria-haspopup="true"
+					aria-expanded="false">접속하기<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+				<li><a href="login.jsp">로그인</a></li>
+				<li><a href = "join.jsp">회원가입</a></li>
+			</ul>
+			</li>
+		</ul>
     </div>
   </nav>
 <%
@@ -56,7 +65,17 @@
   <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
       <a class="navbar-brand" href="main.jsp">WATCHA</a>
-    <a class="btn btn-primary" href="logoutAction.jsp">로그아웃</a>
+  <ul class = "nav navbar-nav navbar-right">
+			<li class="dropdown">
+				<a href="#" class ="dropdown-toggle"<%--여기서 #은 없음을 의미  --%>
+					data-toggle="dropdown" role="button" aria-haspopup="true"
+					aria-expanded="false">접속하기<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+				<li><a href="user.jsp">회원관리</a></li>
+				<li><a href = "logoutAction.jsp">로그아웃</a></li>
+			</ul>
+			</li>
+		</ul>
     </div>
   </nav>
   	<%
@@ -66,7 +85,17 @@
 		<nav class="navbar navbar-light bg-light static-top">
     <div class="container">
       <a class="navbar-brand" href="main.jsp">WATCHA</a>
-      <a class="btn btn-primary" href="logoutAction.jsp">로그아웃</a>
+     <ul class = "nav navbar-nav navbar-right">
+			<li class="dropdown">
+				<a href="#" class ="dropdown-toggle"<%--여기서 #은 없음을 의미  --%>
+					data-toggle="dropdown" role="button" aria-haspopup="true"
+					aria-expanded="false">마이페이지<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+				<li><a href="mypage1.jsp">마이페이지</a></li>
+				<li><a href = "logoutAction.jsp">로그아웃</a></li>
+			</ul>
+			</li>
+		</ul>
     </div>
   </nav>
   
@@ -117,7 +146,7 @@
           <div class="testimonial-item mx-auto mb-5 mb-lg-0">
             <img class="img-fluid rounded-circle mb-3" src="img/testimonials-1.jpg" alt="">
             <h5>김 현 수</h5>
-            <p class="font-weight-light mb-0">"He is Jejuc"</p>
+            <p class="font-weight-light mb-0">"Father of speed"</p>
           </div>
         </div>
         <div class="col-lg-4">
@@ -214,6 +243,8 @@
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+	<script src ="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src ="js/bootstrap.js"></script>
+	<script src="js/slid.js"></script>
 </body>
 </html>
