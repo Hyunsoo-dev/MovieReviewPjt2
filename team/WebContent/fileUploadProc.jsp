@@ -12,6 +12,7 @@
 <body>
 	<%
 		String directory = application.getRealPath("/upload/");
+		out.print(directory);
 		int maxSize = 1024 * 1024 * 100; //100mb
 		String encoding = "euc-kr";
 		
@@ -42,6 +43,8 @@
 		
 		//파일 업로드 메소드 호출해서 파일 업로드함.
 		new ManagerDAO().fileUpload(movie_name1,movie_name2,fileName,fileRealName,movie_year,movie_time,movie_content);
+		
+		response.sendRedirect("index.jsp?center=managerMovieList.jsp");
 	%>
 </body>
 </html>

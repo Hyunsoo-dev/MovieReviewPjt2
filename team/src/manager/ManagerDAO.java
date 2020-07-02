@@ -165,7 +165,7 @@ public void fileUpload(String movie_name1, String movie_name2, String fileName,
 	
 	try {
 		
-		String sql = "insert into moviebbs values (moviebbs_seq, ?,?,?,?,?,?,?)";
+		String sql = "insert into moviebbs values (moviebbs_seq.nextval, ?,?,?,?,?,?,?)";
 		pstmt = con.prepareStatement(sql);
 		pstmt.setString(1, movie_name1);
 		pstmt.setString(2, movie_name2);
