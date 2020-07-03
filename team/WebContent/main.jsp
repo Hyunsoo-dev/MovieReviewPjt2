@@ -28,7 +28,7 @@
 </head>
 
 <body>
-<%
+<%-- <%
 	String userID = null;
 	if(session.getAttribute("userID")!=null){
 		userID = (String)session.getAttribute("userID");
@@ -47,7 +47,7 @@
       <a class="navbar-brand" href="main.jsp">WATCHA</a>
  <ul class = "nav navbar-nav navbar-right">
 			<li class="dropdown">
-				<a href="#" class ="dropdown-toggle"<%--여기서 #은 없음을 의미  --%>
+				<a href="#" class ="dropdown-toggle"여기서 #은 없음을 의미 
 					data-toggle="dropdown" role="button" aria-haspopup="true"
 					aria-expanded="false">접속하기<span class="caret"></span></a>
 			<ul class="dropdown-menu">
@@ -67,7 +67,7 @@
       <a class="navbar-brand" href="main.jsp">WATCHA</a>
   <ul class = "nav navbar-nav navbar-right">
 			<li class="dropdown">
-				<a href="#" class ="dropdown-toggle"<%--여기서 #은 없음을 의미  --%>
+				<a href="#" class ="dropdown-toggle"여기서 #은 없음을 의미 
 					data-toggle="dropdown" role="button" aria-haspopup="true"
 					aria-expanded="false">접속하기<span class="caret"></span></a>
 			<ul class="dropdown-menu">
@@ -87,7 +87,7 @@
       <a class="navbar-brand" href="main.jsp">WATCHA</a>
      <ul class = "nav navbar-nav navbar-right">
 			<li class="dropdown">
-				<a href="#" class ="dropdown-toggle"<%--여기서 #은 없음을 의미  --%>
+				<a href="#" class ="dropdown-toggle"여기서 #은 없음을 의미 
 					data-toggle="dropdown" role="button" aria-haspopup="true"
 					aria-expanded="false">마이페이지<span class="caret"></span></a>
 			<ul class="dropdown-menu">
@@ -104,7 +104,7 @@
 		}
   %>
 		
-  
+   --%>
   
   
   
@@ -194,6 +194,7 @@
 
 
   <!-- Footer -->
+   <!--
   <footer class="footer bg-light">
     <div class="container">
       <div class="row">
@@ -239,7 +240,7 @@
       </div>
     </div>
   </footer>
-
+ -->
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
