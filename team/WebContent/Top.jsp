@@ -79,17 +79,24 @@ function press(f){
    <form  action="MovieList.jsp" role="search" method="post" name="search" >
         <div class="form-row">
           <input type="text" class="form-control form-control-lg" placeholder="작품 제목, 배우, 감독을 검색해 보세요." name="movieName" onkeypress="JavaScript:press(this.form)">
-        
-         
-            </div>
-      </form>
+        </div>
+   </form>
       
     <a class="btn btn-primary" href="logoutAction.jsp">로그아웃</a>
     </div>
   </nav>
+  
+  
+  <!-- 관리자로 로그인 한 경우 네비게이션 바가 생성됨. -->
+  <nav class="nav nav-pills nav-fill">
+	  <a class="nav-item nav-link" href="index.jsp?center=managerMovieList.jsp">영화 리스트</a>
+	  <a class="nav-item nav-link" href="index.jsp?center=fileUpload.jsp">영화 정보 입력</a>
+	  <a class="nav-item nav-link" href="#">Link</a>
+  </nav>
+  
   	<%
 		}else{
-		%>
+	%>
 		
 		<nav class="navbar navbar-light bg-light static-top">
     <div class="container">

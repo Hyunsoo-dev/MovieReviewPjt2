@@ -10,19 +10,11 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
-<jsp:include page="Top.jsp" />
+
 </head>
 <body>
 
-	<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
-		<ul class="navbar-nav">
-		    <li class="nav-item active">
-		      <a class="nav-link" href="#">영화</a>
-		    </li>
-		</ul>
-			
-	</nav>
-	<br>
+	
 	<section class="movieListMore">
 	<%		
 			//리스트 페이지에서 더보기 버튼 클릭 시 검색값을 같이 넘겨줌.
@@ -70,6 +62,6 @@
 	%>
 		<hr size="1px" color="gray">
 	</section>
-<jsp:include page="Bottom.jsp" />
+
 </body>
 </html>

@@ -16,7 +16,7 @@
 
 %>
 <script>
-	location.href = "main.jsp";
+	location.href = "index.jsp?center=main.jsp";
 </script>
 </body>
 </html>
