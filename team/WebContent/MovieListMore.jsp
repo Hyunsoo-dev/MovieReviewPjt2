@@ -8,7 +8,7 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
-<jsp:include page="Top.jsp" />
+
 </head>
 <body>
 
@@ -67,6 +67,6 @@
 	%>
 		<hr size="1px" color="gray">
 	</section>
-<jsp:include page="Bottom.jsp" />
+
 </body>
 </html>

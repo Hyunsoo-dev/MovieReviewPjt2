@@ -16,9 +16,13 @@
  	position : relative;
  	
  }
+ .noResult{
+ 	text-align : center;
+ 	font-style: italic;
+ }
 </style>
 
-<jsp:include page="Top.jsp" />
+
 
 </head>
 <body>
@@ -65,16 +69,28 @@
 	<%
 			movieDAO edao = new movieDAO();
 			Vector<movieBean> v = edao.getMovieList(movieName);
-		
-		for(int i = 0; i < v.size(); i++){
-			if(i == 7) {			
-				break;
-			}
-			movieBean ebean = v.get(i);
+			
+			//검색 결과가 없는 경우
+			if(v.isEmpty()){
+	%>
+			<div class="noResult">검색 결과가 없습니다.</div>
+				
+	<%
+			}else{
+				
+				for(int i = 0; i < v.size(); i++){
+					if(i == 7) {			
+						break;
+					}
+			
+				movieBean ebean = v.get(i);
 	%>
 		
 				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				<td class = "text-info">
+				
+	
+				
 				<div class="searchresult__list">
 					<div class="searchresult__list-img">
 						<a href ="bbs.jsp?movieName=<%=movieName%>"><!-- bbs.jsp로 영화 이름 넘기기 -->
@@ -91,6 +107,7 @@
 				</td>
 		
 	<%
+				}
 			}
 	%>
 			
@@ -118,18 +135,26 @@
 	
 	<table>
 		<%
-		for(int i = 0; i < v.size(); i++){
+			//검색 결과가 없는 경우
+		if(v.isEmpty()){
+		%>
+			<div class="noResult">검색 결과가 없습니다.</div>
+		<%	
+		
+		}else{
 			
-			if(i!=0 && i%3==0) {			
+			for(int i = 0; i < v.size(); i++){
+			
+				if(i!=0 && i%3==0) {			
 		%>
 		
-			<tr height="20"></tr>
+				<tr height="20"></tr>
 			
 		<%		
 			
-			}
+				}
 			
-			movieBean ebean = v.get(i);
+				movieBean ebean = v.get(i);
 		%>
 		
 				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
@@ -155,6 +180,7 @@
 
 
         <%
+				}
 			}
 		%>
 		
@@ -167,6 +193,6 @@
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
 
 	<hr size="1px" color="gray">
-<jsp:include page="Bottom.jsp" />
+
 </body>
 </html>

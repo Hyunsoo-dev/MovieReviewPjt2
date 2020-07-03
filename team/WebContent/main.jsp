@@ -150,7 +150,7 @@
   	
 	%>
 
-<!-- admin 으로 로그인 한 경우  -->
+<!-- admin 으로 로그인 8한 경우  -->
 	 <!-- Masthead -->
   <!-- Masthead -->
   <header class="masthead text-white text-center">
