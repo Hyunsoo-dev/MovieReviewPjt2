@@ -113,10 +113,10 @@
 </table>
 
      <div class="movieInfo__btn">
-	<button class="btn btn-primary btn-sm" onclick="location.href='index.jsp?center=manager.jsp'">전체 리스트 보기</button>
+	
 	<input type="hidden" name="movie_no" value="<%= rbean.getMovie_no() %>">
 	<input type="submit" value="수정" class="btn btn-primary btn-sm">
-	<input type="reset" value="취소" onclick="href=index.jsp?center=manager.jsp" class="btn btn-primary btn-sm">
+	<input type="reset" value="취소" onclick="history.go(-1)" class="btn btn-primary btn-sm">
 </div>
 </form>
 </main>	

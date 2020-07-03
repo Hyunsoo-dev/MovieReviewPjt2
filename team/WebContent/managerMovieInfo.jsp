@@ -6,7 +6,17 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
+
+
+<!-- 
+	
+	관리자 리스트 페이지에서 
+	리스트를 클릭했을 경우 
+	영화 정보와 함께 수정, 삭제 기능을 제공하는 페이지
+	
+	
+ -->
+
 <style>
 	/* 전체 메인 틀 */
 	.main{
@@ -47,7 +57,7 @@
 
 <%	
 	request.setCharacterEncoding("euc-kr");
-	int movie_no = Integer.parseInt(request.getParameter("no"));
+	int movie_no = Integer.parseInt(request.getParameter("movie_no"));
 	ManagerDAO rdao = new ManagerDAO();
 	ManagerBean rbean = rdao.getOneList(movie_no);
 %>  
@@ -104,7 +114,7 @@
 </table>
 
      <div class="movieInfo__btn">
-	<button class="btn btn-primary btn-sm" onclick="location.href='index.jsp?center=manager.jsp'">전체 리스트 보기</button>
+	<button class="btn btn-primary btn-sm" onclick="location.href='index.jsp?center=managerMovieList.jsp'">전체 리스트 보기</button>
 	<button class="btn btn-primary btn-sm" onclick="location.href='index.jsp?center=managerUpdate.jsp?no=<%=rbean.getMovie_no()%>'">수정</button>
 	<button class="btn btn-primary btn-sm" onclick="location.href='index.jsp?center=managerDelete.jsp?no=<%=rbean.getMovie_no()%>'">삭제</button>
 </div>

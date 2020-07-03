@@ -40,9 +40,10 @@
 	<div class="centerPage">
 	<td>
 		<jsp:include page="<%=center %>" />
-	</div>
-	</div>
 	</td>
+	</div>
+	</div>
+	
 
 <tr>
 
