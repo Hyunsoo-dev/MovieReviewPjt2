@@ -103,6 +103,43 @@ public ManagerBean getOneList(int movie_no){
 	return rbean;
 	}
 
+
+//매니저 page 에서 검색한 리스트를 가져오는 메소드 
+public Vector<ManagerBean> getMovieList(String movie_name1){
+	
+	getCon();
+	Vector<ManagerBean> v = new Vector<ManagerBean>();
+	ManagerBean rbean = null;
+	try {
+		
+		String sql = "select * from moviebbs where movie_name1 like ?||'%'";
+		pstmt = con.prepareStatement(sql);
+		pstmt.setString(1, movie_name1);
+		rs = pstmt.executeQuery();
+		
+		while(rs.next()) {
+			rbean = new ManagerBean();
+			rbean.setMovie_no(rs.getInt(1));
+			rbean.setMovie_name1(rs.getString(2));
+			rbean.setMovie_name2(rs.getString(3));
+			rbean.setMovie_foster(rs.getNString(4));
+			rbean.setMovie_realfoster(rs.getString(5));
+			rbean.setMovie_year(rs.getString(6));
+			rbean.setMovie_time(rs.getString(7));
+			rbean.setMovie_content(rs.getString(8));
+			
+			v.add(rbean);
+		}
+		con.close();
+		
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+	
+	return v;
+}
+
+
 //관리자 페이지에서 영화 정보를 수정하는 메소드
 public void managerUpdate(ManagerBean rbean){
 	
