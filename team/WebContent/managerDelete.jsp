@@ -20,7 +20,8 @@
 				
 			%>
 				<script>
-					location.href="index.jsp?center=manager.jsp";
+					alert("삭제되었습니다.");
+					location.href="index.jsp?center=managerMovieList.jsp";
 				</script>
 			
 					

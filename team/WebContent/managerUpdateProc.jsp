@@ -24,7 +24,7 @@ request.setCharacterEncoding("euc-kr");
 %>
 	<script>
 		alert("수정되었습니다.");
-		location.href="index.jsp?center=manager.jsp";
+		location.href="index.jsp?center=managerMovieList.jsp";
 	</script>
 
 </body>

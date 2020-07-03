@@ -36,13 +36,14 @@
 		for(int i = 0; i < v.size(); i++){
 
 			ManagerBean rbean = v.get(i);
-	%>	<table>
+	%>	
+	<table>
 			
 			<tr height = "20">
 				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				<td>
 					<div class="movieListMore__list-img">
-						<a href ="bbs.jsp?movieName=<%=movieName%>">
+						<a href ="index.jsp?center=managerMovieInfo.jsp?movie_no=<%= rbean.getMovie_no()%>">
 							<img src = "upload/<%= rbean.getMovie_foster() %>" height ="100" width = "100">
 						</a>
 					</div>	
@@ -51,7 +52,7 @@
 				<td>	
 				
 					<div class="movieListMore__list-content">
-						<a href ="bbs.jsp?movieName=<%=movieName%>">
+						<a href ="index.jsp?center=managerMovieInfo.jsp?movie_no=<%= rbean.getMovie_no()%>">
 							<%= rbean.getMovie_name1() %><br>
 							<%= rbean.getMovie_year() %>
 						</a>
