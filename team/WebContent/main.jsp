@@ -106,11 +106,19 @@
 		
    --%>
   
-  
-  
-  
-  <!-- Masthead -->
-  <header class="masthead text-white text-center">
+  <%
+   // 관리자로 로그인 한 경우
+   	 String userID = null; 
+  	if(session.getAttribute("userID")!=null){
+  		userID = (String)session.getAttribute("userID");
+  	}
+  	
+  	if(userID == null || (!userID.equals("admin"))){
+  		
+  		
+  	
+  %>	
+ <header class="masthead text-white text-center">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
@@ -118,7 +126,7 @@
           <h1 class="mb-5">WATCHA</h1>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <form action="MovieList.jsp" role="search" method="post">
+          <form action="index.jsp?center=MovieList.jsp" role="search" method="post">
             <div class="form-row">
               <div class="col-12 col-md-9 mb-2 mb-md-0">
                  <input type="text" name="movieName" class="form-control form-control-lg" placeholder="작품 제목, 배우, 감독을 검색해 보세요." >
@@ -132,10 +140,44 @@
       </div>
     </div>
   </header>
-
-
-
  
+ 
+  
+  
+	<%	
+  	}else if(userID.equals("admin")){
+  		
+  	
+	%>
+
+<!-- admin 으로 로그인 한 경우  -->
+	 <!-- Masthead -->
+  <!-- Masthead -->
+  <header class="masthead text-white text-center">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <h1 class="mb-5">WATCHA</h1>
+        </div>
+        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+          <form action="index.jsp?center=managerMovieList.jsp" role="search" method="post">
+            <div class="form-row">
+              <div class="col-12 col-md-9 mb-2 mb-md-0">
+                 <input type="text" name="movieName" class="form-control form-control-lg" placeholder="작품 제목, 배우, 감독을 검색해 보세요." >
+            </div>
+              <div class="col-12 col-md-3">
+                <button type="submit" class="btn btn-block btn-lg btn-primary">검색</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
+ <%
+  	}
+ %>
 
   <!-- Testimonials -->
   <section class="testimonials text-center bg-light">
