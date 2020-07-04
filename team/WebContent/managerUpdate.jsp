@@ -60,7 +60,10 @@
       
      <th colspan="3" scope="col">
       	<div class="table__img">
-			<img src="img/Harry01.jpg" class="img-fluid" alt="Responsive image">
+      		<!-- 사진을 클릭한 경우 편집을 위해 movie_no를 MovieImgEdit page에 넘겨준다. -->
+      		<a href="index.jsp?center=MovieImgEdit.jsp?movie_no=<%= rbean.getMovie_no() %>">
+				<img src="upload/<%= rbean.getMovie_foster() %>" class="img-fluid" alt="Responsive image">
+			</a>
 		</div>
 	</th>
       

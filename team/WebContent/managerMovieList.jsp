@@ -55,7 +55,7 @@
 			if(movieName == null){
 				 v = rdao.getAllList();	
 			}else{
-				v = rdao.getMovieList(movieName);
+				 v = rdao.getMovieList(movieName);
 			} 
 			
 			
@@ -76,8 +76,6 @@
 	<table>
 			
 			<tr>
-				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-				
 				<td>
 				<div class="managerMovieList__list">
 				
@@ -87,9 +85,11 @@
 						</a>
 					</div>
 					 <div class="managerMovieList__list-content">	
+						 <a href ="index.jsp?center=managerMovieInfo.jsp?movie_no=<%= rbean.getMovie_no()%>">
 							<%= rbean.getMovie_name1() %>
 							<br>
 							<%= rbean.getMovie_year() %>
+						</a>
 					</div>	
 				
 				</div>	

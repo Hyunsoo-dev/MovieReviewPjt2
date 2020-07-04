@@ -71,7 +71,7 @@
       
      <th colspan="3" scope="col">
       	<div class="table__img">
-			<img src="img/Harry01.jpg" class="img-fluid" alt="Responsive image">
+			<img src="upload/<%= rbean.getMovie_foster() %>" class="img-fluid" alt="Responsive image">
 		</div>
 	</th>
       
