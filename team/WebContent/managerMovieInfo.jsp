@@ -22,6 +22,11 @@
 	.main{
 		position :relative;
 	}
+	/* 이미지 스타일  */
+	.img-fluid{
+		width : 150px ;
+		height : 150px;
+	}
 	/* 테이블 안 이미지 스타일 */
 	.table__img{
 		text-align:center;

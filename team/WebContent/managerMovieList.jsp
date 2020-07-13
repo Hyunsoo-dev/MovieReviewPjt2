@@ -77,8 +77,7 @@
 			
 			<tr>
 				<td>
-				<div class="managerMovieList__list">
-				
+				<div class="managerMovieList__list">			
 					<div class="managerMovieList__list-img">
 						<a href ="index.jsp?center=managerMovieInfo.jsp?movie_no=<%= rbean.getMovie_no()%>">
 							<img src = "upload/<%= rbean.getMovie_foster() %>" height ="130" width = "150">
@@ -91,7 +90,6 @@
 							<%= rbean.getMovie_year() %>
 						</a>
 					</div>	
-				
 				</div>	
 				 </td>
 						<%-- <div class="managerMovieList__list-content">
