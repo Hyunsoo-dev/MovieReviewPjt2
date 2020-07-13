@@ -224,5 +224,41 @@ public void fileUpload(String movie_name1, String movie_name2, String fileName,
 	
 	}	
 
+//관리자가 영화 사진을 수정하는 메소드
+public void editMovieImg(int movie_no , String fileName , String fileRealName) {
+	getCon();
+	
+	try {
+		String sql = "update moviebbs set movie_foster=? , movie_realfoster=? where movie_no=? ";
+		pstmt = con.prepareStatement(sql);
+		pstmt.setString(1, fileName);
+		pstmt.setString(2, fileRealName);
+		pstmt.setInt(3, movie_no);
+		pstmt.executeUpdate();
+		
+		con.close();
+	} catch (Exception e) {
+		
+	}
+}
+
+
+//delete 를 눌렀을 경우 사진이 기본화면으로 바뀌는 메소드 
+public void deleteMovieImg(int movie_no, String fileName, String fileRealName) {
+getCon();
+	
+	try {
+		String sql = "update moviebbs set movie_foster=? , movie_realfoster=? where movie_no=? ";
+		pstmt = con.prepareStatement(sql);
+		pstmt.setString(1, fileName);
+		pstmt.setString(2, fileRealName);
+		pstmt.setInt(3, movie_no);
+		pstmt.executeUpdate();
+		
+		con.close();
+	} catch (Exception e) {
+		
+	}
+}
 
 }
